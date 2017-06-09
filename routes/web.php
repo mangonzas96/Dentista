@@ -32,11 +32,11 @@ Route::get('/registerpaciente', function () {
     return view('auth/registerpaciente');
 });
 
-Route::get('/homesecretaria', function (){
-    return view('homesecretaria');
+Route::get('/homeodontologo', function (){
+    return view('homeodontologo');
 });
 
-Route::get('/homedoctor', function (){
-    return view('homedoctor');
+Route::get('/homepaciente', function (){
+    return view('homepaciente');
 });
  */
