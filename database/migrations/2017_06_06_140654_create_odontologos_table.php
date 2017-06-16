@@ -15,12 +15,9 @@ class CreateOdontologosTable extends Migration
     {
         Schema::create('odontologos', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('surname');
-            $table->string('telefono');
-            $table->string('direccion')->nullable();
             $table->string('numcolegiado')->unique();
             $table->unsignedInteger('user_id')->unique();
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->unsignedInteger('especialidad_id');
             $table->foreign('especialidad_id')->references('id')->on('especialidads');
             $table->timestamps();
