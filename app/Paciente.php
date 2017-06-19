@@ -9,6 +9,10 @@ class Paciente extends Model
     //
     protected $fillable = ['dni','fechanacimiento','aseguradora_id'];
 
+    public function user(){
+        return $this->belongsTo('App\User');
+    }
+
     public function sesion()
     {
         return $this->hasMany('App\Sesion');

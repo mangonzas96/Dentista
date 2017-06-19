@@ -16,7 +16,7 @@
     <style>
         html, body {
             background-image: url("http://www.impiantidentalialbania.it/wp-content/themes/healing-touch/images/slides/slider1.jpg");
-            color: #191970;
+                color: #700c0f;
             font-family: 'raro, courie', sans-serif;
             font-weight: 100;
             height: 100vh;
@@ -54,7 +54,7 @@
         }
 
         .links > a {
-            color: #191970;
+            color: #700c0f;
             padding: 0 25px;
             font-size: 12px;
             font-weight: 600;
@@ -70,10 +70,11 @@
 
     <!-- Scripts -->
     <script>
-        window.Laravel = {!! json_encode([ //<?php echo
+        window.Laravel = <?php echo json_encode([
             'csrfToken' => csrf_token(),
-        ]) !!});
+        ]); ?>
     </script>
+
 </head>
 <body>
     <div id="app">
@@ -105,9 +106,9 @@
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
                         @if (Auth::guest())
-                            <li><a href="{{ route('login') }}"><FONT FACE="raro, courier", sans-serif SIZE=4 COLOR="#191970">Identifícate</FONT></a></li>
-                            <li><a href="{{ route('auth/registerodontologo') }}"><FONT FACE="raro, courier", sans-serif SIZE=4 COLOR="#191970">Regístrate como odontólogo</FONT></a></li>
-                            <li><a href="{{ route('auth/registerpaciente') }}"><FONT FACE="raro, courier", sans-serif SIZE=4 COLOR="#191970">Regístrate como paciente</FONT></a></li>
+                            <li><a href="{{ route('login') }}"><FONT FACE="raro, verdana", sans-serif SIZE=4 COLOR="#191970">Identifícate</FONT></a></li>
+                            <li><a href="{{ route('auth/registerodontologo') }}"><FONT FACE="raro, verdana", sans-serif SIZE=4 COLOR="#191970">Regístrate como odontólogo</FONT></a></li>
+                            <li><a href="{{ route('auth/registerpaciente') }}"><FONT FACE="raro, verdana", sans-serif SIZE=4 COLOR="#191970">Regístrate como paciente</FONT></a></li>
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">

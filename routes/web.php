@@ -24,13 +24,14 @@ Route::resource('sesions','SesionController');
 Route::resource('tratamientos','TratamientoController');
 
 //Vistas register y home
-/*
+
 Route::get('/registerodontologo', function () {
     return view('auth/registerodontologo');
-});
+})->name('auth/registerodontologo');
+
 Route::get('/registerpaciente', function () {
     return view('auth/registerpaciente');
-});
+})->name('auth/registerpaciente');
 
 Route::get('/homeodontologo', function (){
     return view('homeodontologo');
@@ -39,4 +40,6 @@ Route::get('/homeodontologo', function (){
 Route::get('/homepaciente', function (){
     return view('homepaciente');
 });
- */
+
+Route::get('/homeodontologo', 'HomeController@index');
+Route::get('/homepaciente', 'HomeController@index');

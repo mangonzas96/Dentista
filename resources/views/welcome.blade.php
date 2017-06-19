@@ -15,8 +15,8 @@
 
         html, body {
             background-image: url("http://www.impiantidentalialbania.it/wp-content/themes/healing-touch/images/slides/slider1.jpg");
-            color: #04212F;
-            font-family: 'raro, courier', sans-serif;
+            color: #700c0f;
+            font-family: 'verdana';
             font-weight: 100;
             height: 100vh;
             margin: 0;
@@ -39,8 +39,8 @@
 
         .top-right {
             position: absolute;
-            right: 10px;
-            top: 18px;
+            right: 100px;
+            top: 40px;
         }
 
         .content {
@@ -67,23 +67,22 @@
     </style>
 </head>
     <body>
+        <img src="http://www.sanchezromero.dental/wp-content/uploads/2015/06/logo-5-copia.png"/>
+
         <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @if (Auth::check())
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ url('/login') }}">Login</a>
-                        <a href="{{ url('/register') }}">Register</a>
-                    @endif
-                </div>
-            @endif
+            <div class="top-right links">
+
+                <a href="{{ url('/login') }}"><FONT FACE="raro, courier" SIZE=4 COLOR="#191970">
+                    IDENTIFICATE</FONT></a>
+                <a href="{{ url('/registerodontologo') }}"> <FONT FACE="raro, courier" SIZE=4 COLOR="#191970">
+                    REGISTRATE</FONT></a>
+
+            </div>
 
             <div class="content">
                 <div class="title m-b-md">
-
+                    Arroyo 74
                 </div>
-
             </div>
         </div>
     </body>

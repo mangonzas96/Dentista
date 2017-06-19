@@ -17,6 +17,10 @@ class User extends Authenticatable
         return $this -> hasOne('App\Odontologo');
     }
 
+    public function paciente(){
+        return $this -> hasOne('App\Paciente');
+    }
+
     public function getFullNameAttribute()
     {
         return $this->name .' '.$this->surname;

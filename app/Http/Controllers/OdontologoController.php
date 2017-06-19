@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Odontologo;
 use App\Especialidad;
+use App\User;
 use Illuminate\Http\Request;
 
 class OdontologoController extends Controller
@@ -45,7 +46,8 @@ class OdontologoController extends Controller
         $this->validate($request, [
             'name' => 'required|max:255',
             'surname' => 'required|max:255',
-            'telefono' => 'required|max:255',
+            'telefono' => 'required|max:9',
+            'email' => 'required|max:255',
             'direccion' => 'max:255',
             'numcolegiado' => 'required',
             'especialidad_id' => 'required|exists:especialidads,id',
@@ -66,9 +68,9 @@ class OdontologoController extends Controller
      * @param  \App\Odontologo  $odontologo
      * @return \Illuminate\Http\Response
      */
-    public function show(Odontologo $odontologo)
+    public function show($id)
     {
-        return view('odontologos/show');
+        return view('odontologos/show',['odontologo'=>$id]);
         //
         /* Según proyecto ClinicaDental
         return view('odontologo.profile', ['odontologo' => User::findOrFail($id)]);
@@ -87,7 +89,7 @@ class OdontologoController extends Controller
     {
         $odontologo = Odontologo::find($id);
         $especialidades = Especialidad::all()->pluck('name','id');
-        return view('medicos/edit',['medico'=> $odontologo, 'especialidades'=>$especialidades]);
+        return view('odontologos/edit',['odontologo'=> $odontologo, 'especialidades'=>$especialidades]);
         //
     }
 

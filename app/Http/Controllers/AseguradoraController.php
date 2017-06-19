@@ -2,29 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Odontologo;
-use App\Paciente;
-use App\Tratamiento;
-use App\Sesion;
+use App\Aseguradora;
 use Illuminate\Http\Request;
 
-class SesionController extends Controller
+class AseguradoraController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
     public function index()
     {
         //
-        
     }
 
     /**
@@ -34,9 +24,7 @@ class SesionController extends Controller
      */
     public function create()
     {
-        $sesion = Sesion::all();
-
-        return view('sesions/index',['sesions'=>$sesion]);
+        //
     }
 
     /**
@@ -47,23 +35,16 @@ class SesionController extends Controller
      */
     public function store(Request $request)
     {
-        $odontologos = Odontologo::all()->pluck('full_name','id');
-
-        $pacientes = Paciente::all()->pluck('full_name','id');
-
-        $tratamiento = $pacientes->filter(Tratamiento::all()->pluck('full_name','id'));
-
-        return view('citas/create',['odontologos'=>$odontologos, 'pacientes'=>$pacientes, 'tratamiento'=>$tratamiento]);
-
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Sesion  $sesion
+     * @param  \App\Aseguradora  $aseguradora
      * @return \Illuminate\Http\Response
      */
-    public function show(Sesion $sesion)
+    public function show(Aseguradora $aseguradora)
     {
         //
     }
@@ -71,10 +52,10 @@ class SesionController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Sesion  $sesion
+     * @param  \App\Aseguradora  $aseguradora
      * @return \Illuminate\Http\Response
      */
-    public function edit(Sesion $sesion)
+    public function edit(Aseguradora $aseguradora)
     {
         //
     }
@@ -83,10 +64,10 @@ class SesionController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Sesion  $sesion
+     * @param  \App\Aseguradora  $aseguradora
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Sesion $sesion)
+    public function update(Request $request, Aseguradora $aseguradora)
     {
         //
     }
@@ -94,10 +75,10 @@ class SesionController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Sesion  $sesion
+     * @param  \App\Aseguradora  $aseguradora
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Sesion $sesion)
+    public function destroy(Aseguradora $aseguradora)
     {
         //
     }

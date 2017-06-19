@@ -66,11 +66,18 @@ class RegisterController extends Controller
     {
         $user = User::create([
             'name' => $data['name'],
+            'surname' => $data['surname'],
+            'telefono' => $data['telefono'],
             'email' => $data['email'],
+            'direccion' => $data['direccion'],
             'password' => bcrypt($data['password']),
         ]);
         if(isset($data['numcolegiado'])){
 
+            /*$odontologo = Odontologo::crate([
+                'numcolegiado' => $data['numcolegiado'],
+                'especialidad_id' => $data['especialidad_id'],
+                ]);*/
             $odontologo = new Odontologo($data);
             $odontologo->user_id=$user->id;
             $odontologo->save();
