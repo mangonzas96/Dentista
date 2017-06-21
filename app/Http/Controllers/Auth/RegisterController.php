@@ -82,6 +82,7 @@ class RegisterController extends Controller
                 'numcolegiado' => $data['numcolegiado'],
                 'especialidad_id' => $data['especialidad_id'],
                 ]);*/
+
             $odontologo = new Odontologo($data);
             $odontologo->user_id=$user->id;
             $odontologo->save();
