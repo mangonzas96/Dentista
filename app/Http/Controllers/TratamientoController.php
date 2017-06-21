@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Odontologo;
 use App\Tratamiento;
+use App\Paciente;
 use Illuminate\Http\Request;
 
 class TratamientoController extends Controller
@@ -50,7 +51,7 @@ class TratamientoController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'odontologo_id' => 'required|exists:medicos,id',
+            'odontologo_id' => 'required|exists:odontologos,id',
             'paciente_id' => 'required|exists:pacientes,id',
             'fechainicio' => 'required|date|after:now',
             'fechafin' => 'required|date|after:now',
@@ -93,7 +94,7 @@ class TratamientoController extends Controller
         $pacientes = Paciente::all()->pluck('full_name','id');
 
 
-        return view('tratamientos/create',['odontologos'=>$odontologos, 'pacientes'=>$pacientes]);
+        return view('tratamientos/create',['tratamiento'=>$tratamientos, 'odontologos'=>$odontologos, 'pacientes'=>$pacientes]);
     }
 
     /**
@@ -106,7 +107,7 @@ class TratamientoController extends Controller
     public function update(Request $request, Tratamiento $id)
     {
         $this->validate($request, [
-            'odontologo_id' => 'required|exists:medicos,id',
+            'odontologo_id' => 'required|exists:odontologos,id',
             'paciente_id' => 'required|exists:pacientes,id',
             'fechainicio' => 'required|date|after:now',
             'fechafin' => 'required|date|after:now',
@@ -135,6 +136,6 @@ class TratamientoController extends Controller
         $tratamiento->delete();
         flash('Tratamiento borrado correctamente');
 
-        return redirect()->route('citas.index');
+        return redirect()->route('tratamientos.index');
     }
 }

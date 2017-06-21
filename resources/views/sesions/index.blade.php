@@ -9,12 +9,8 @@
 
                     <div class="panel-body">
                         @include('flash::message')
-                        {!! Form::open(['route' => 'sesions.create', 'method' => 'get', 'class'=>'inline-important']) !!}
+                        {!! Form::open(['route' => 'sesions.create', 'method' => 'get']) !!}
                         {!!   Form::submit('Crear sesiones', ['class'=> 'btn btn-primary'])!!}
-                        {!! Form::close() !!}
-
-                        {!! Form::open(['route' => 'sesions.destroyAll', 'method' => 'delete', 'class'=>'inline-important']) !!}
-                        {!!   Form::submit('Borrar todas', ['class'=> 'btn btn-danger','onclick' => 'if(!confirm("¿Está seguro?"))event.preventDefault();'])!!}
                         {!! Form::close() !!}
 
                         <br><br>
@@ -30,7 +26,8 @@
 
                                 <th colspan="2">Acciones</th>
                             </tr>
-                            @foreach ($tratamientos as $tratamiento)
+
+                            @foreach ($sesions as $sesion)
                             <tr>
 
                                 <td>{{ $sesion->fecha }}</td>

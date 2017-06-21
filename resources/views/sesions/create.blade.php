@@ -41,8 +41,8 @@
                             <br>
                             {!! Form::select('paciente_id', $pacientes, ['class' => 'form-control', 'required']) !!}
                         </div>
-                        {!! Form::submit('Guardar',['class'=>'btn-primary btn']) !!}
 
+                        {!! Form::submit('Guardar',['class'=>'btn-primary btn']) !!}
                         {!! Form::close() !!}
                     </div>
                 </div>

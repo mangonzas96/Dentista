@@ -25,6 +25,10 @@ Route::resource('aseguradoras','AseguradoraController');
 Route::resource('gabinetes','GabineteController');
 Route::resource('especialidads','EspecialidadController');
 
+Route::delete('especialidades/destroyAll', 'EspecialidadController@destroyAll')->name('especialidades.destroyAll');
+
+Route::delete('sesions/destroyAll', 'SesionController@destroyAll')->name('sesions.destroyAll');
+
 //Vistas register y home
 
 

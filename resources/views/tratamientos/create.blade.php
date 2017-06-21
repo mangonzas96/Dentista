@@ -10,7 +10,7 @@
                     <div class="panel-body">
                         @include('flash::message')
 
-                        {!! Form::open(['route' => 'tratamientos.store', 'class'=>'form-inline']) !!}
+                        {!! Form::open(['route' => 'tratamientos.store']) !!}
 
                         <div class="form-group">
                             {!! Form::label('fechainicio', 'Fecha inicio del tratamiento') !!}
