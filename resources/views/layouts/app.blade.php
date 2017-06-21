@@ -107,7 +107,7 @@
                         <!-- Authentication Links -->
                         @if (Auth::guest())
                             <li><a href="{{ route('login') }}"><FONT FACE="raro, verdana", sans-serif SIZE=4 COLOR="#191970">Identifícate</FONT></a></li>
-                            <li><a href="{{ route('auth/registerodontologo') }}"><FONT FACE="raro, verdana", sans-serif SIZE=4 COLOR="#191970">Regístrate como odontólogo</FONT></a></li>
+                            <li><a href="{{ url('register') }}"><FONT FACE="raro, verdana", sans-serif SIZE=4 COLOR="#191970">Regístrate como odontólogo</FONT></a></li>
                             <li><a href="{{ route('auth/registerpaciente') }}"><FONT FACE="raro, verdana", sans-serif SIZE=4 COLOR="#191970">Regístrate como paciente</FONT></a></li>
                         @else
                             <li class="dropdown">

@@ -15,7 +15,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('odontologos','OdontologoController');
@@ -27,9 +26,6 @@ Route::resource('gabinetes','GabineteController');
 
 //Vistas register y home
 
-Route::get('/registerodontologo', function () {
-    return view('auth/registerodontologo');
-})->name('auth/registerodontologo');
 
 Route::get('/registerpaciente', function () {
     return view('auth/registerpaciente');
@@ -45,3 +41,5 @@ Route::get('/homepaciente', function (){
 
 Route::get('/homeodontologo', 'HomeController@index');
 Route::get('/homepaciente', 'HomeController@index');
+
+Auth::routes();

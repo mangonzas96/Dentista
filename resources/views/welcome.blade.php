@@ -74,7 +74,7 @@
 
                 <a href="{{ url('/login') }}"><FONT FACE="raro, courier" SIZE=4 COLOR="#191970">
                     IDENTIFICATE</FONT></a>
-                <a href="{{ url('/registerodontologo') }}"> <FONT FACE="raro, courier" SIZE=4 COLOR="#191970">
+                <a href="{{ url('/register') }}"> <FONT FACE="raro, courier" SIZE=4 COLOR="#191970">
                     REGISTRATE</FONT></a>
 
             </div>

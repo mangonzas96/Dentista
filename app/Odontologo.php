@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Odontologo extends Model
 {
     //
-    protected $fillable = ['numcolegiado'];//, 'especialidad_id'];
+    protected $fillable = ['numcolegiado','especialidad_id'];
 
     public function user(){
         return $this->belongsTo('App\User');

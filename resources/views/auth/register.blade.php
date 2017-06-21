@@ -108,18 +108,12 @@
                             </div>
                         </div>
 
-                        <div class="form-group{{ $errors->has('id_especialidad') ? ' has-error' : '' }}">
-                            <label for="id_especialidad" class="col-md-4 control-label">Especialidad</label>
 
-                            <div class="col-md-6">
-                                <input id="id_especialidad" type="text" class="form-control" name="id_especialidad" value="{{ old('id_especialidad') }}" required autofocus>
 
-                                @if ($errors->has('id_especialidad'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('id_especialidad') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
+                        <div class="form-group">
+                            {!!Form::label('especialidad_id', 'Especialidad del odontologo') !!}
+                            <br>
+                            {!! Form::select('especialidad_id', $especialidades, ['class' => 'form-control', 'required']) !!}
                         </div>
 
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">

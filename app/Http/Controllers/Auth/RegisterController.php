@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Especialidad;
 use App\Odontologo;
 use App\User;
 use App\Paciente;
@@ -36,11 +37,14 @@ class RegisterController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('guest');
-    }
 
+    public function showRegistrationForm()
+    {
+
+        $especialidades = Especialidad::all()->pluck('name','id');
+        return view('auth.register')->with('especialidades', $especialidades);
+
+    }
     /**
      * Get a validator for an incoming registration request.
      *
