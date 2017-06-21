@@ -58,9 +58,9 @@ class SesionController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'gabinete_id' => 'required|exists:medicos,id',
-            'tratamiento_id'  => 'required|exists:medicos,id',
-            'medico_id' => 'required|exists:medicos,id',
+            'gabinete_id' => 'required|exists:odontologos,id',
+            'tratamiento_id'  => 'required|exists:odontologos,id',
+            'odontologo_id' => 'required|exists:odontologos,id',
             'paciente_id' => 'required|exists:pacientes,id',
             'fecha' => 'required|date|after:now',
             'observaciones' => 'required|max:255',
@@ -119,9 +119,9 @@ class SesionController extends Controller
     public function update(Request $request, Sesion $id)
     {
         $this->validate($request, [
-            'gabinete_id' => 'required|exists:medicos,id',
-            'tratamiento_id'  => 'required|exists:medicos,id',
-            'medico_id' => 'required|exists:medicos,id',
+            'gabinete_id' => 'required|exists:odontologos,id',
+            'tratamiento_id'  => 'required|exists:odontologos,id',
+            'odontologo_id' => 'required|exists:odontologos,id',
             'paciente_id' => 'required|exists:pacientes,id',
             'fecha' => 'required|date|after:now',
             'observaciones' => 'required|max:255',

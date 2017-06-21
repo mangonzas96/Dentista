@@ -10,11 +10,12 @@
                     <div class="panel-body">
                         @include('flash::message')
 
-                        {!! Form::open(['route' => 'sesions.store', 'class'=>'form-inline']) !!}
+                        {!! Form::open(['route' => 'sesions.store']) !!}
 
                         <div class="form-group">
                             {!! Form::label('fecha', 'Fecha de la sesion') !!}
-                            {!! Form::text('fecha',null,['class'=>'form-control', 'required', 'autofocus']) !!}
+                            <input type="datetime-local" id="fecha" name="fecha" class="form-control" value="{{Carbon\Carbon::now()->format('Y-m-d\Th:i')}}" />
+
                         </div>
                         <div class="form-group">
                             {!! Form::label('observaciones', 'Observaciones de la sesion') !!}
