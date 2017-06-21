@@ -38,6 +38,12 @@
                             {!! Form::text('direccion',null,['class'=>'form-control', 'required']) !!}
                         </div>
 
+                        <div class="form-group">
+                            {!!Form::label('especialidad_id', 'Especialidad del odontólogo') !!}
+                            <br>
+                            {!! Form::select('especialidad_id', $especialidads, ['class' => 'form-control', 'required']) !!}
+                        </div>
+
 
                         {!! Form::submit('Guardar',['class'=>'btn-primary btn']) !!}
 

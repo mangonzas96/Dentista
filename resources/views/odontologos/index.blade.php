@@ -22,6 +22,7 @@
                                 <th>Teléfono</th>
                                 <th>Email</th>
                                 <th>Dirección</th>
+                                <th>Especialidad</th>
                                 <th colspan="2">Acciones</th>
                             </tr>
 
@@ -35,6 +36,7 @@
                                     <td>{{ $odontologo->telefono}}</td>
                                     <td>{{ $odontologo->email}}</td>
                                     <td>{{ $odontologo->direccion}}</td>
+                                    <td>{{ $odontologo->especialidad->name }}</td>
 
 
                                     <td>
@@ -55,4 +57,5 @@
                 </div>
             </div>
         </div>
+    </div>
 @endsection
