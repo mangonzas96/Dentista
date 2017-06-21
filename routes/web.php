@@ -42,5 +42,6 @@ Route::get('/homepaciente', function (){
 
 Route::get('/home', 'HomeController@index');
 Route::get('/homepaciente', 'HomeController@index');
+//Route::get('/registerpaciente', 'HomeController@showRegistrationFormPaciente');
 
 Auth::routes();

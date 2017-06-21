@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Odontologo extends Model
 {
     //
-    protected $fillable = ['user_id','numcolegiado', 'especialidad_id'];
+    protected $fillable = ['numcolegiado'];//, 'especialidad_id'];
 
     public function user(){
         return $this->belongsTo('App\User');
@@ -29,6 +29,6 @@ class Odontologo extends Model
 
     public function getFullNameAttribute()
     {
-        return $this->user->name .' '.$this->user->surname;
+        return $this->name .' '.$this->surname;
     }
 }
