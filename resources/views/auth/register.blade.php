@@ -110,10 +110,12 @@
 
 
 
-                        <div class="form-group">
+                        <div class="form-group" class="col-md-4 control-label">
                             {!!Form::label('especialidad_id', 'Especialidad del odontologo') !!}
                             <br>
+                            <div class="col-md-6">
                             {!! Form::select('especialidad_id', $especialidades, ['class' => 'form-control', 'required']) !!}
+                            </div>
                         </div>
 
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
