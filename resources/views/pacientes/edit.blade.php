@@ -14,37 +14,37 @@
 
                         <div class="form-group">
                             {!! Form::label('name', 'Nombre del paciente') !!}
-                            {!! Form::text('name',null,['class'=>'form-control', 'required', 'autofocus']) !!}
+                            {!! Form::text('name',$paciente->name,['class'=>'form-control', 'required', 'autofocus']) !!}
                         </div>
                         <div class="form-group">
                             {!! Form::label('surname', 'Apellidos del paciente') !!}
-                            {!! Form::text('surname',null,['class'=>'form-control', 'required']) !!}
+                            {!! Form::text('surname',$paciente->surname,['class'=>'form-control', 'required']) !!}
                         </div>
                         <div class="form-group">
                             {!! Form::label('dni', 'DNI del paciente') !!}
-                            {!! Form::text('dni',null,['class'=>'form-control', 'required']) !!}
+                            {!! Form::text('dni',$paciente->dni,['class'=>'form-control', 'required']) !!}
                         </div>
                         <div class="form-group">
                             {!! Form::label('fechanacimiento', 'Fecha de nacimiento del paciente') !!}
-                            {!! Form::text('fechanacimiento',null,['class'=>'form-control', 'required']) !!}
+                            {!! Form::text('fechanacimiento',$paciente->fechanacimiento,['class'=>'form-control', 'required']) !!}
                         </div>
                         <div class="form-group">
                             {!! Form::label('telefono', 'Teléfono del paciente') !!}
-                            {!! Form::text('telefono',null,['class'=>'form-control', 'required']) !!}
+                            {!! Form::text('telefono',$paciente->telefono,['class'=>'form-control', 'required']) !!}
                         </div>
                         <div class="form-group">
                             {!! Form::label('email', 'Email del paciente') !!}
-                            {!! Form::text('email',null,['class'=>'form-control', 'required']) !!}
+                            {!! Form::text('email',$paciente->email,['class'=>'form-control', 'required']) !!}
                         </div>
 
                         <div class="form-group">
                             {!! Form::label('direccion', 'Dirección del paciente') !!}
-                            {!! Form::text('direccion',null,['class'=>'form-control', 'required']) !!}
+                            {!! Form::text('direccion',$paciente->direccion,['class'=>'form-control', 'required']) !!}
                         </div>
                         <div class="form-group">
                             {!!Form::label('aseguradora_id', 'Aseguradora del paciente') !!}
                             <br>
-                            {!! Form::select('aseguradora_id', $aseguradoras, ['class' => 'form-control', 'required']) !!}
+                            {!! Form::select('aseguradora_id', $aseguradoras, $paciente->aseguradora_id , ['class' => 'form-control', 'required']) !!}
                         </div>
 
                         {!! Form::submit('Guardar',['class'=>'btn-primary btn']) !!}

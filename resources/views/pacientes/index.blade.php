@@ -16,8 +16,7 @@
                         <br><br>
                         <table class="table table-striped table-bordered">
                             <tr>
-                                <th>Name</th>
-                                <th>Apellidos</th>
+                                <th>Nombre y Apellidos</th>
                                 <th>DNI</th>
                                 <th> Fecha de nacimiento</th>
                                 <th>Telefono</th>
@@ -35,8 +34,7 @@
 
 
                                 <tr>
-                                    <td>{{ $paciente->name }}</td>
-                                    <td>{{ $paciente->surname }}</td>
+                                    <td>{{ $paciente->fullname }}</td>
                                     <td>{{ $paciente->dni }}</td>
                                     <td>{{ $paciente->fechanacimiento }}</td>
                                     <td>{{ $paciente->telefono }}</td>

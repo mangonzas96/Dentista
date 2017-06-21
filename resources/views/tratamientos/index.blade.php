@@ -21,9 +21,7 @@
                         <table class="table table-striped table-bordered">
                             <tr>
 
-                                <th>Fecha de inicio</th>
-                                <th>Fecha Fin</th>
-                                <th>Descripción</th>
+                                <th> Descripción (Fecha de inicio - Fecha Fin) </th>
                                 <th>Odontólogo</th>
                                 <th>Paciente</th>
 
@@ -32,9 +30,7 @@
                             @foreach ($tratamientos as $tratamiento)
                             <tr>
 
-                                <td>{{ $tratamiento->fechainicio }}</td>
-                                <td>{{ $tratamiento->fechafin }}</td>
-                                <td>{{ $tratamiento->descripcion }}</td>
+                                <td>{{ $tratamiento->fullname }}</td>
                                 <td>{{ $tratamiento->odontologo->name }}</td>
                                 <td>{{ $tratamiento->paciente->name }}</td>
 

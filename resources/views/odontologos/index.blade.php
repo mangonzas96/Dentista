@@ -16,8 +16,8 @@
                         <br><br>
                         <table class="table table-striped table-bordered">
                             <tr>
-                                <th>Nombre</th>
-                                <th>Apellidos</th>
+                                <th>Nombre y Apellidos</th>
+
                                 <th>Número de Colegiado</th>
                                 <th>Teléfono</th>
                                 <th>Email</th>
@@ -30,8 +30,7 @@
 
 
                                 <tr>
-                                    <td>{{ $odontologo->name }}</td>
-                                    <td>{{ $odontologo->surname }}</td>
+                                    <td>{{ $odontologo->fullname }}</td>
                                     <td>{{ $odontologo->numcolegiado}}</td>
                                     <td>{{ $odontologo->telefono}}</td>
                                     <td>{{ $odontologo->email}}</td>

@@ -13,7 +13,7 @@
                         {!! Form::model($especialidad, [ 'route' => ['especialidad.update',$especialidad->id], 'method'=>'PUT', 'class'=>'form-inline']) !!}
                         <div class="form-group">
                             {!! Form::label('name', 'Nombre de la especialidad') !!}
-                            {!! Form::text('name',null,['class'=>'form-control', 'required', 'autofocus']) !!}
+                            {!! Form::text('name',$especialidad->name,['class'=>'form-control', 'required', 'autofocus']) !!}
                         </div>
 
                         {!! Form::submit('Actualizar',['class'=>'btn-primary btn']) !!}

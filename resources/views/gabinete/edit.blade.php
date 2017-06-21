@@ -13,7 +13,7 @@
                         {!! Form::model($gabinete, [ 'route' => ['gabinete.update',$gabinete->id], 'method'=>'PUT', 'class'=>'form-inline']) !!}
                         <div class="form-group">
                             {!! Form::label('especificaciones', 'Especificaciones del gabinete') !!}
-                            {!! Form::text('especificaciones',null,['class'=>'form-control', 'required', 'autofocus']) !!}
+                            {!! Form::text('especificaciones',$gabinete->especificaciones,['class'=>'form-control', 'required', 'autofocus']) !!}
                         </div>
 
                         {!! Form::submit('Actualizar',['class'=>'btn-primary btn']) !!}

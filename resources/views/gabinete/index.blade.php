@@ -25,7 +25,7 @@
                             </tr>
                             @foreach ($gabinetes as $gabinete)
                             <tr>
-                                <td>{{ $gabinete->especificaciones }}</td>
+                                <td>{{ $gabinete->fullname }}</td>
                                 <td>
                                     {!! Form::open(['route' => ['gabinetes.edit',$gabinete->id], 'method' => 'get']) !!}
                                     {!!   Form::submit('Editar', ['class'=> 'btn btn-warning'])!!}
