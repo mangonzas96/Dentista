@@ -23,6 +23,7 @@ Route::resource('pacientes','PacientesController');
 Route::resource('sesions','SesionController');
 Route::resource('tratamientos','TratamientoController');
 Route::resource('aseguradoras','AseguradoraController');
+Route::resource('gabinetes','GabineteController');
 
 //Vistas register y home
 
