@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Paciente extends Model
 {
     //
-    protected $fillable = ['dni','fechanacimiento','aseguradora_id'];
+    protected $fillable = ['user_id','dni','fechanacimiento','aseguradora_id'];
 
     public function user(){
         return $this->belongsTo('App\User');
@@ -30,7 +30,7 @@ class Paciente extends Model
 
     public function getFullNameAttribute()
     {
-        return $this->name .' '.$this->surname;
+        return $this->user->name .' '.$this->user->surname;
     }
 
     /*
