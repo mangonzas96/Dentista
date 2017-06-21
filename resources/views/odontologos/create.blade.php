@@ -43,6 +43,16 @@
                             {!! Form::select('especialidad_id', $especialidads, ['class' => 'form-control', 'required']) !!}
                         </div>
 
+                        <div class="form-group">
+                            {!! Form::label('password', 'Contraseña la contraseña') !!}
+                            {!! Form::password('password',null,['class'=>'form-control', 'required']) !!}
+                        </div>
+
+                        <div class="form-group">
+                            {!! Form::label('password-confirm', 'Confirma la contraseña') !!}
+                            {!! Form::password('password-confirm',null,['class'=>'form-control', 'required']) !!}
+                        </div>
+
 
                         {!! Form::submit('Guardar',['class'=>'btn-primary btn']) !!}
 
