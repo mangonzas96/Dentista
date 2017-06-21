@@ -18,7 +18,7 @@ Route::get('/', function () {
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('odontologos','OdontologoController');
-Route::resource('pacientes','PacientesController');
+Route::resource('pacientes','PacienteController');
 Route::resource('sesions','SesionController');
 Route::resource('tratamientos','TratamientoController');
 Route::resource('aseguradoras','AseguradoraController');
@@ -41,5 +41,6 @@ Route::get('/homepaciente', function (){
 
 Route::get('/homeodontologo', 'HomeController@index');
 Route::get('/homepaciente', 'HomeController@index');
+//Route::get('/registerpaciente', 'HomeController@showRegistrationFormPaciente');
 
 Auth::routes();

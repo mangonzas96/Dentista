@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Aseguradora;
 use App\Especialidad;
 use App\Odontologo;
 use App\User;
@@ -35,15 +36,19 @@ class RegisterController extends Controller
     /**
      * Create a new controller instance.
      *
-     * @return void
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
+
+    /*public function showRegistrationFormPaciente()
+    {
+        $aseguradoras = Aseguradora::all()->pluck('name','id');
+        return view('auth.register')->with('aseguradoras', $aseguradoras);
+    }*/
 
     public function showRegistrationForm()
     {
-
         $especialidades = Especialidad::all()->pluck('name','id');
         return view('auth.register')->with('especialidades', $especialidades);
-
     }
     /**
      * Get a validator for an incoming registration request.
@@ -77,12 +82,6 @@ class RegisterController extends Controller
             'password' => bcrypt($data['password']),
         ]);
         if(isset($data['numcolegiado'])){
-
-            /*$odontologo = Odontologo::crate([
-                'numcolegiado' => $data['numcolegiado'],
-                'especialidad_id' => $data['especialidad_id'],
-                ]);*/
-
 
             $odontologo = new Odontologo($data);
             $odontologo->user_id=$user->id;
