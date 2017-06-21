@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Sesion extends Model
 {
     //
-    protected $fillable = ['fecha','observaciones','gabinete_id','tratamiento_id'];
+    protected $fillable = ['fecha','observaciones','gabinete_id','tratamiento_id', 'odontologo_id', 'paciente_id'];
 
     public function odontologo(){
         return $this->belongsTo('App\Odontologo');

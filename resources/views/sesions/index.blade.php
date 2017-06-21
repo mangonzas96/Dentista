@@ -5,15 +5,15 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Tratamientos</div>
+                    <div class="panel-heading">Sesiones</div>
 
                     <div class="panel-body">
                         @include('flash::message')
-                        {!! Form::open(['route' => 'tratamientos.create', 'method' => 'get', 'class'=>'inline-important']) !!}
-                        {!!   Form::submit('Crear tratamiento', ['class'=> 'btn btn-primary'])!!}
+                        {!! Form::open(['route' => 'sesions.create', 'method' => 'get', 'class'=>'inline-important']) !!}
+                        {!!   Form::submit('Crear sesiones', ['class'=> 'btn btn-primary'])!!}
                         {!! Form::close() !!}
 
-                        {!! Form::open(['route' => 'tratamientos.destroyAll', 'method' => 'delete', 'class'=>'inline-important']) !!}
+                        {!! Form::open(['route' => 'sesions.destroyAll', 'method' => 'delete', 'class'=>'inline-important']) !!}
                         {!!   Form::submit('Borrar todas', ['class'=> 'btn btn-danger','onclick' => 'if(!confirm("¿Está seguro?"))event.preventDefault();'])!!}
                         {!! Form::close() !!}
 
@@ -21,9 +21,10 @@
                         <table class="table table-striped table-bordered">
                             <tr>
 
-                                <th>Fecha de inicio</th>
-                                <th>Fecha Fin</th>
-                                <th>Descripción</th>
+                                <th>Fecha</th>
+                                <th>Observaciones</th>
+                                <th>Gabinete</th>
+                                <th>Tratamiento</th>
                                 <th>Odontólogo</th>
                                 <th>Paciente</th>
 
@@ -32,20 +33,21 @@
                             @foreach ($tratamientos as $tratamiento)
                             <tr>
 
-                                <td>{{ $tratamiento->fechainicio }}</td>
-                                <td>{{ $tratamiento->fechafin }}</td>
-                                <td>{{ $tratamiento->descripcion }}</td>
-                                <td>{{ $tratamiento->odontologo->name }}</td>
-                                <td>{{ $tratamiento->paciente->name }}</td>
+                                <td>{{ $sesion->fecha }}</td>
+                                <td>{{ $sesion->observaciones }}</td>
+                                <td>{{ $sesion->gabinete->name }}</td>
+                                <td>{{ $sesion->tratamiento->descripcion }}</td>
+                                <td>{{ $sesion->odontologo->name }}</td>
+                                <td>{{ $sesion->paciente->name }}</td>
 
                                 <td>
-                                    {!! Form::open(['route' => ['tratamientos.edit',$tratamiento->id], 'method' => 'get']) !!}
+                                    {!! Form::open(['route' => ['sesions.edit',$sesion->id], 'method' => 'get']) !!}
                                     {!!   Form::submit('Editar', ['class'=> 'btn btn-warning'])!!}
                                     {!! Form::close() !!}
 
                                 </td>
                                 <td>
-                                    {!! Form::open(['route' => ['tratamientos.destroy',$tratamiento->id], 'method' => 'delete']) !!}
+                                    {!! Form::open(['route' => ['sesions.destroy',$sesion->id], 'method' => 'delete']) !!}
                                     {!!   Form::submit('Borrar', ['class'=> 'btn btn-danger' ,'onclick' => 'if(!confirm("¿Está seguro?"))event.preventDefault();'])!!}
                                     {!! Form::close() !!}
 
@@ -53,7 +55,6 @@
                             </tr>
                             @endforeach
                         </table>
-                    </div>
                 </div>
             </div>
         </div>

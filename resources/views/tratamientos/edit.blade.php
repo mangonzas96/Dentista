@@ -13,11 +13,11 @@
                         {!! Form::model($tratamiento, [ 'route' => ['tratamiento.update',$tratamiento->id], 'method'=>'PUT', 'class'=>'form-inline']) !!}
                         <div class="form-group">
                             {!! Form::label('fechainicio', 'Fecha inicio del tratamiento') !!}
-                            {!! Form::text('inicio',null,['class'=>'form-control', 'required', 'autofocus']) !!}
+                            {!! Form::text('fechainicio',null,['class'=>'form-control', 'required', 'autofocus']) !!}
                         </div>
                         <div class="form-group">
                             {!! Form::label('fechafin', 'Fecha fin del tratamiento') !!}
-                            {!! Form::text('fin',null,['class'=>'form-control', 'required', 'autofocus']) !!}
+                            {!! Form::text('fechafin',null,['class'=>'form-control', 'required', 'autofocus']) !!}
                         </div>
                         <div class="form-group">
                             {!! Form::label('descripcion', 'Descripción del tratamiento') !!}

@@ -2,11 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Odontologo;
 use App\Tratamiento;
 use Illuminate\Http\Request;
 
 class TratamientoController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +20,10 @@ class TratamientoController extends Controller
      */
     public function index()
     {
-        //
+
+        $tratamientos = Tratamiento::all();
+
+        return view('tratamientos/index',['tratamientos'=>$tratamientos]);
     }
 
     /**
@@ -24,7 +33,12 @@ class TratamientoController extends Controller
      */
     public function create()
     {
-        //
+        $odontologos = Odontologo::all()->pluck('full_name','id');
+
+        $pacientes = Paciente::all()->pluck('full_name','id');
+
+
+        return view('tratamientos/create',['odontologos'=>$odontologos, 'pacientes'=>$pacientes]);
     }
 
     /**
@@ -35,7 +49,22 @@ class TratamientoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'odontologo_id' => 'required|exists:medicos,id',
+            'paciente_id' => 'required|exists:pacientes,id',
+            'fechainicio' => 'required|date|after:now',
+            'fechafin' => 'required|date|after:now',
+            'descripcion' => 'required|max:255'
+
+        ]);
+
+        $tratamiento = new Tratamiento($request->all());
+        $tratamiento->save();
+
+
+        flash('Tratamiento creado correctamente');
+
+        return redirect()->route('tratamientos.index');
     }
 
     /**
@@ -55,9 +84,16 @@ class TratamientoController extends Controller
      * @param  \App\Tratamiento  $tratamiento
      * @return \Illuminate\Http\Response
      */
-    public function edit(Tratamiento $tratamiento)
+    public function edit(Tratamiento $id)
     {
-        //
+        $tratamientos = Tratamiento::find($id);
+
+        $odontologos = Odontologo::all()->pluck('full_name','id');
+
+        $pacientes = Paciente::all()->pluck('full_name','id');
+
+
+        return view('tratamientos/create',['odontologos'=>$odontologos, 'pacientes'=>$pacientes]);
     }
 
     /**
@@ -67,9 +103,24 @@ class TratamientoController extends Controller
      * @param  \App\Tratamiento  $tratamiento
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Tratamiento $tratamiento)
+    public function update(Request $request, Tratamiento $id)
     {
-        //
+        $this->validate($request, [
+            'odontologo_id' => 'required|exists:medicos,id',
+            'paciente_id' => 'required|exists:pacientes,id',
+            'fechainicio' => 'required|date|after:now',
+            'fechafin' => 'required|date|after:now',
+            'descripcion' => 'required|max:255'
+
+        ]);
+        $tratamiento = Tratamiento::find($id);
+        $tratamiento->fill($request->all());
+
+        $tratamiento->save();
+
+        flash('Tratamiento modificado correctamente');
+
+        return redirect()->route('tratamientos.index');
     }
 
     /**
@@ -78,8 +129,12 @@ class TratamientoController extends Controller
      * @param  \App\Tratamiento  $tratamiento
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Tratamiento $tratamiento)
+    public function destroy(Tratamiento $id)
     {
-        //
+        $tratamiento = Tratamiento::find($id);
+        $tratamiento->delete();
+        flash('Tratamiento borrado correctamente');
+
+        return redirect()->route('citas.index');
     }
 }

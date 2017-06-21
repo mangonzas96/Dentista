@@ -22,6 +22,11 @@ class Odontologo extends Model
         return $this->hasMany('App\Tratamiento');
     }
 
+    public function sesion()
+    {
+        return $this->hasMany('App\Sesion');
+    }
+
     public function getFullNameAttribute()
     {
         return $this->name .' '.$this->surname;

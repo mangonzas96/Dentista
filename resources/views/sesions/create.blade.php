@@ -5,24 +5,30 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Crear tratamiento</div>
+                    <div class="panel-heading">Crear sesion</div>
 
                     <div class="panel-body">
                         @include('flash::message')
 
-                        {!! Form::open(['route' => 'tratamientos.store', 'class'=>'form-inline']) !!}
+                        {!! Form::open(['route' => 'sesions.store', 'class'=>'form-inline']) !!}
 
                         <div class="form-group">
-                            {!! Form::label('fechainicio', 'Fecha inicio del tratamiento') !!}
-                            {!! Form::text('fechainicio',null,['class'=>'form-control', 'required', 'autofocus']) !!}
+                            {!! Form::label('fecha', 'Fecha de la sesion') !!}
+                            {!! Form::text('fecha',null,['class'=>'form-control', 'required', 'autofocus']) !!}
                         </div>
                         <div class="form-group">
-                            {!! Form::label('fechafin', 'Fecha fin del tratamiento') !!}
-                            {!! Form::text('fechafin',null,['class'=>'form-control', 'required', 'autofocus']) !!}
+                            {!! Form::label('observaciones', 'Observaciones de la sesion') !!}
+                            {!! Form::text('observaciones',null,['class'=>'form-control', 'required', 'autofocus']) !!}
                         </div>
                         <div class="form-group">
-                            {!! Form::label('descripcion', 'Descripción del tratamiento') !!}
-                            {!! Form::text('descripcion',null,['class'=>'form-control', 'required', 'autofocus']) !!}
+                            {!!Form::label('gabinete_id', 'Gabinete de la sesion') !!}
+                            <br>
+                            {!! Form::select('gabinete_id', $gabinetes, ['class' => 'form-control', 'required']) !!}
+                        </div>
+                        <div class="form-group">
+                            {!!Form::label('tratamiento_id', 'Tratamiento de la sesion') !!}
+                            <br>
+                            {!! Form::select('tratamiento_id', $tratamientos, ['class' => 'form-control', 'required']) !!}
                         </div>
                         <div class="form-group">
                             {!!Form::label('odontologo_id', 'Odontólogo del tratamiento') !!}

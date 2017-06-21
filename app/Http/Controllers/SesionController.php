@@ -6,6 +6,7 @@ use App\Odontologo;
 use App\Paciente;
 use App\Tratamiento;
 use App\Sesion;
+use App\Gabinete;
 use Illuminate\Http\Request;
 
 class SesionController extends Controller
@@ -23,7 +24,9 @@ class SesionController extends Controller
 
     public function index()
     {
-        //
+        $sesions = Sesion::all();
+
+        return view('sesions/index',['sesions'=>$sesions]);
         
     }
 
@@ -34,9 +37,16 @@ class SesionController extends Controller
      */
     public function create()
     {
-        $sesion = Sesion::all();
+        $gabinetes = Gabinete::all()->pluck('full_name','id');
 
-        return view('sesions/index',['sesions'=>$sesion]);
+        $tratamientos = Tratamiento::all()->pluck('full_name','id');
+
+        $odontologos = Odontologo::all()->pluck('full_name','id');
+
+        $pacientes = Paciente::all()->pluck('full_name','id');
+
+
+        return view('sesions/create',['gabinetes'=>$gabinetes,'tratamientos'=>$tratamientos, 'odontologos'=>$odontologos, 'pacientes'=>$pacientes]);
     }
 
     /**
@@ -47,14 +57,23 @@ class SesionController extends Controller
      */
     public function store(Request $request)
     {
-        $odontologos = Odontologo::all()->pluck('full_name','id');
+        $this->validate($request, [
+            'gabinete_id' => 'required|exists:medicos,id',
+            'tratamiento_id'  => 'required|exists:medicos,id',
+            'medico_id' => 'required|exists:medicos,id',
+            'paciente_id' => 'required|exists:pacientes,id',
+            'fecha' => 'required|date|after:now',
+            'observaciones' => 'required|max:255',
 
-        $pacientes = Paciente::all()->pluck('full_name','id');
+        ]);
 
-        $tratamiento = $pacientes->filter(Tratamiento::all()->pluck('full_name','id'));
+        $sesion = new Sesion($request->all());
+        $sesion->save();
 
-        return view('citas/create',['odontologos'=>$odontologos, 'pacientes'=>$pacientes, 'tratamiento'=>$tratamiento]);
 
+        flash('Sesion creada correctamente');
+
+        return redirect()->route('sesions.index');
     }
 
     /**
@@ -74,9 +93,20 @@ class SesionController extends Controller
      * @param  \App\Sesion  $sesion
      * @return \Illuminate\Http\Response
      */
-    public function edit(Sesion $sesion)
+    public function edit(Sesion $id)
     {
-        //
+        $sesion = Sesion::find($id);
+
+        $gabinetes = Gabinete::all()->pluck('full_name','id');
+
+        $tratamientos = Tratamiento::all()->pluck('full_name','id');
+
+        $odontologos = Odontologo::all()->pluck('full_name','id');
+
+        $pacientes = Paciente::all()->pluck('full_name','id');
+
+
+        return view('sesions/edit',['gabinetes'=>$gabinetes,'tratamientos'=>$tratamientos,'sesion'=> $sesion, 'odontologos'=>$odontologos, 'pacientes'=>$pacientes]);
     }
 
     /**
@@ -86,9 +116,25 @@ class SesionController extends Controller
      * @param  \App\Sesion  $sesion
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Sesion $sesion)
+    public function update(Request $request, Sesion $id)
     {
-        //
+        $this->validate($request, [
+            'gabinete_id' => 'required|exists:medicos,id',
+            'tratamiento_id'  => 'required|exists:medicos,id',
+            'medico_id' => 'required|exists:medicos,id',
+            'paciente_id' => 'required|exists:pacientes,id',
+            'fecha' => 'required|date|after:now',
+            'observaciones' => 'required|max:255',
+
+        ]);
+        $sesion = Sesion::find($id);
+        $sesion->fill($request->all());
+
+        $sesion->save();
+
+        flash('Sesion modificada correctamente');
+
+        return redirect()->route('sesions.index');
     }
 
     /**
@@ -97,8 +143,12 @@ class SesionController extends Controller
      * @param  \App\Sesion  $sesion
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Sesion $sesion)
+    public function destroy(Sesion $id)
     {
-        //
+        $sesion = Sesion::find($id);
+        $sesion->delete();
+        flash('Sesion borrada correctamente');
+
+        return redirect()->route('sesions.index');
     }
 }

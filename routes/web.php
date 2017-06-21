@@ -22,6 +22,7 @@ Route::resource('odontologos','OdontologoController');
 Route::resource('pacientes','PacientesController');
 Route::resource('sesions','SesionController');
 Route::resource('tratamientos','TratamientoController');
+Route::resource('aseguradoras','AseguradoraController');
 
 //Vistas register y home
 

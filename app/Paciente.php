@@ -13,6 +13,11 @@ class Paciente extends Model
         return $this->belongsTo('App\User');
     }
 
+    public function aseguradora()
+    {
+        return $this->hasOne('App\Aseguradora');
+    }
+
     public function sesion()
     {
         return $this->hasMany('App\Sesion');
