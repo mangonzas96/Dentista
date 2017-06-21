@@ -28,11 +28,9 @@ class HomeController extends Controller
     public function index()
     {
         if(Auth::User() -> Odontologo){
-            return view('homeodontologo');
+            return view('home');
         } elseif (Auth::User() -> Paciente){
             return view('homepaciente');
-        }else{
-            return view('home');
-        }
+       }
     }
 }

@@ -19,7 +19,7 @@ class CreateOdontologosTable extends Migration
             $table->unsignedInteger('user_id')->unique();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->unsignedInteger('especialidad_id');
-            $table->foreign('especialidad_id')->references('id')->on('especialidads');
+            $table->foreign('especialidad_id')->references('id')->on('especialidads')->onDelete('cascade');;
             $table->timestamps();
         });
     }

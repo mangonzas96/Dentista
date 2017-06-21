@@ -16,13 +16,14 @@ Route::get('/', function () {
 });
 
 
-Route::get('/home', 'HomeController@index')->name('home');
+
 Route::resource('odontologos','OdontologoController');
-Route::resource('pacientes','PacientesController');
+Route::resource('pacientes','PacienteController');
 Route::resource('sesions','SesionController');
 Route::resource('tratamientos','TratamientoController');
 Route::resource('aseguradoras','AseguradoraController');
 Route::resource('gabinetes','GabineteController');
+Route::resource('especialidads','EspecialidadController');
 
 //Vistas register y home
 
@@ -31,15 +32,15 @@ Route::get('/registerpaciente', function () {
     return view('auth/registerpaciente');
 })->name('auth/registerpaciente');
 
-Route::get('/homeodontologo', function (){
-    return view('homeodontologo');
+/*Route::get('/home', function (){
+    return view('home');
 });
 
 Route::get('/homepaciente', function (){
     return view('homepaciente');
-});
+}); */
 
-Route::get('/homeodontologo', 'HomeController@index');
+Route::get('/home', 'HomeController@index');
 Route::get('/homepaciente', 'HomeController@index');
 
 Auth::routes();

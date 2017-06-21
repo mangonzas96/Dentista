@@ -29,9 +29,9 @@ class PacienteController extends Controller
     public function create()
     {
         //
-        $users = User::find('user_id');
+
         $aseguradoras = Aseguradora::all()->pluck('name','id');
-        return view('pacientes/create',['users'=>$users],['aseguradoras'=>$aseguradoras]);
+        return view('pacientes/create',['aseguradoras'=>$aseguradoras]);
     }
 
     /**

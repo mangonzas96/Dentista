@@ -29,9 +29,9 @@ class OdontologoController extends Controller
      */
     public function create()
     {
-        $users = User::find('user_id');
+
         $especialidades = Especialidad::all()->pluck('name','id');
-        return view('odontologos/create',['users'=>$users],['especialidads'=>$especialidades]);
+        return view('odontologos/create',['especialidads'=>$especialidades]);
         //
     }
 
@@ -70,7 +70,7 @@ class OdontologoController extends Controller
      */
     public function show($id)
     {
-        return view('odontologos/show',['odontologo'=>$id]);
+       // return view('odontologos/show',['odontologo'=>$id]);
         //
         /* Según proyecto ClinicaDental
         return view('odontologo.profile', ['odontologo' => User::findOrFail($id)]);

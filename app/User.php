@@ -21,10 +21,10 @@ class User extends Authenticatable
         return $this -> hasOne('App\Paciente');
     }
 
-    public function getFullNameAttribute()
+  /*  public function getFullNameAttribute()
     {
         return $this->name .' '.$this->surname;
-    }
+    }*/
 
     /**
      * The attributes that should be hidden for arrays.
