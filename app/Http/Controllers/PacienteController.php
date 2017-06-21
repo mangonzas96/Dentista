@@ -71,7 +71,7 @@ class PacienteController extends Controller
     {
         //
         //return view('pacientes/show');
-        return view ('pacientes/show',['paciente'=>$id]);
+        //return view ('pacientes/show',['paciente'=>$id]);
     }
 
     /**

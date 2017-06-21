@@ -9,11 +9,11 @@
 
                     <div class="panel-body">
                         @include('flash::message')
-                        {!! Form::open(['route' => 'especialidades.create', 'method' => 'get', 'class'=>'inline-important']) !!}
+                        {!! Form::open(['route' => 'especialidads.create', 'method' => 'get', 'class'=>'inline-important']) !!}
                         {!!   Form::submit('Crear especialidad', ['class'=> 'btn btn-primary'])!!}
                         {!! Form::close() !!}
 
-                        {!! Form::open(['route' => 'especialidades.destroyAll', 'method' => 'delete', 'class'=>'inline-important']) !!}
+                        {!! Form::open(['route' => 'especialidads.destroyAll', 'method' => 'delete', 'class'=>'inline-important']) !!}
                         {!!   Form::submit('Borrar todas', ['class'=> 'btn btn-danger','onclick' => 'if(!confirm("¿Está seguro?"))event.preventDefault();'])!!}
                         {!! Form::close() !!}
 
@@ -23,17 +23,17 @@
                                 <th>Nombre</th>
                                 <th colspan="2">Acciones</th>
                             </tr>
-                            @foreach ($especialidades as $especialidad)
+                            @foreach ($especialidads as $especialidad)
                             <tr>
                                 <td>{{ $especialidad->name }}</td>
                                 <td>
-                                    {!! Form::open(['route' => ['especialidades.edit',$especialidad->id], 'method' => 'get']) !!}
+                                    {!! Form::open(['route' => ['especialidads.edit',$especialidad->id], 'method' => 'get']) !!}
                                     {!!   Form::submit('Editar', ['class'=> 'btn btn-warning'])!!}
                                     {!! Form::close() !!}
 
                                 </td>
                                 <td>
-                                    {!! Form::open(['route' => ['especialidades.destroy',$especialidad->id], 'method' => 'delete']) !!}
+                                    {!! Form::open(['route' => ['especialidads.destroy',$especialidad->id], 'method' => 'delete']) !!}
                                     {!!   Form::submit('Borrar', ['class'=> 'btn btn-danger' ,'onclick' => 'if(!confirm("¿Está seguro?"))event.preventDefault();'])!!}
                                     {!! Form::close() !!}
 

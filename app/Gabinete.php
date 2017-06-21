@@ -12,4 +12,8 @@ class Gabinete extends Model
     public function sesion(){
         return $this->hasMany('App\Sesion');
     }
+    public function getFullNameAttribute()
+    {
+        return $this->especificaciones;
+    }
 }

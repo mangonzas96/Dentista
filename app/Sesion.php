@@ -24,4 +24,6 @@ class Sesion extends Model
     public function gabinete(){
         return $this->belongsTo('App\Gabinete');
     }
+
+
 }

@@ -21,4 +21,9 @@ class Tratamiento extends Model
         return $this->hasMany('App\Sesion');
     }
 
+    public function getFullNameAttribute()
+    {
+        return $this->descripcion .' ('.$this->fechainicio.' - '.$this->fechafin.' )';
+    }
+
 }
