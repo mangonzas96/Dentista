@@ -18,9 +18,9 @@ class GabineteController extends Controller
      */
     public function index()
     {
-        $gabinete = Gabinete::all();
+        $gabinetes = Gabinete::all();
 
-        return view('gabinetes/index',['gabinetes'=>$gabinete]);
+        return view('gabinetes/index',['gabinetes'=>$gabinetes]);
     }
 
     /**
@@ -77,7 +77,7 @@ class GabineteController extends Controller
     {
         $gabinete = Gabinete::find($id);
 
-        return view('gabinetes/edit')->with('gabinetes', $gabinete);
+        return view('gabinetes/edit',['gabinetes' => $gabinete]);
     }
 
     /**

@@ -84,8 +84,6 @@ class SesionController extends Controller
     public function show($id)
     {
         //
-        $sesions=Sesion::find($id);
-        return View::make('sesions.show',compact($sesions));
     }
 
     /**

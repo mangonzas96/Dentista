@@ -10,7 +10,7 @@
                     <div class="panel-body">
                         @include('flash::message')
 
-                        {!! Form::model($gabinete, [ 'route' => ['gabinetes.update', $gabinete->id], 'method'=>'PUT']) !!}
+                        {!! Form::model($gabinete, [ 'route' => ['gabinetes.update', $gabinete -> id], 'method'=>'PATCH']) !!}
                         <div class="form-group">
                             {!! Form::label('especificaciones', 'Especificaciones del gabinete') !!}
                             {!! Form::text('especificaciones', $gabinete->especificaciones, ['class'=>'form-control', 'required', 'autofocus']) !!}

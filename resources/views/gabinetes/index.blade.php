@@ -16,7 +16,8 @@
                                 <th>Especificaciones</th>
                                 <th colspan="2">Acciones</th>
                             </tr>
-                            @foreach ($gabinetes as $gabinete)
+
+                        @foreach ($gabinetes as $gabinete)
                             <tr>
                                 <td>{{ $gabinete->fullname }}</td>
                                 <td>
@@ -27,8 +28,8 @@
                                 </td>
 
                             </tr>
-                            @endforeach
-                        </table>
+                        @endforeach
+                    </table>
                 </div>
             </div>
         </div>
