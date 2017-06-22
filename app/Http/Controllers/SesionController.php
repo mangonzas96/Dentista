@@ -81,9 +81,11 @@ class SesionController extends Controller
      * @param  \App\Sesion  $sesion
      * @return \Illuminate\Http\Response
      */
-    public function show(Sesion $sesion)
+    public function show($id)
     {
         //
+        $sesions=Sesion::find($id);
+        return View::make('sesions.show',compact($sesions));
     }
 
     /**

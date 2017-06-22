@@ -78,7 +78,7 @@
         </div>
 
         <div class="links">
-            <a href="{{ url('/gabinetes/index') }}"> <FONT FACE="raro, courier" SIZE=4 COLOR="#191970">
+            <a href="{{ url('gabinetes') }}"> <FONT FACE="raro, courier" SIZE=4 COLOR="#191970">
                     Comprueba los gabinetes</FONT></a>
             <a href="{{ url('/tratamientos/create') }}"> <FONT FACE="raro, courier" SIZE=4 COLOR="#191970">
                     Crea un tratamiento</FONT></a>

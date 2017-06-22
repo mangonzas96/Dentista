@@ -27,6 +27,7 @@ Route::resource('especialidads','EspecialidadController');
 
 Route::delete('especialidades/destroyAll', 'EspecialidadController@destroyAll')->name('especialidades.destroyAll');
 
+Route::delete('gabinetes/destroyAll', 'GabineteController@destroyAll')->name('gabinetes.destroyAll');
 //Route::delete('sesions/destroyAll', 'SesionController@destroyAll')->name('sesions.destroyAll');
 
 //Vistas register y home

@@ -70,7 +70,7 @@ class OdontologoController extends Controller
      */
     public function show($id)
     {
-       // return view('odontologos/show',['odontologo'=>$id]);
+       return view('odontologos/show',['odontologo'=>$id]);
         //
         /* Según proyecto ClinicaDental
         return view('odontologo.profile', ['odontologo' => User::findOrFail($id)]);

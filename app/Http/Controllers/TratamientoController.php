@@ -74,9 +74,11 @@ class TratamientoController extends Controller
      * @param  \App\Tratamiento  $tratamiento
      * @return \Illuminate\Http\Response
      */
-    public function show(Tratamiento $tratamiento)
+    public function show($id)
     {
         //
+        $tratamientos=Tratamiento::find($id);
+        return View::make('tratamientos.show',compact($tratamientos));
     }
 
     /**

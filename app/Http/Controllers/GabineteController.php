@@ -77,7 +77,7 @@ class GabineteController extends Controller
     {
         $gabinete = Gabinete::find($id);
 
-        return view('gabinetes/edit')->with('gabinete', $gabinete);
+        return view('gabinetes/edit')->with('gabinetes', $gabinete);
     }
 
     /**

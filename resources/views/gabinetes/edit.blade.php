@@ -5,19 +5,18 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Crear gabinete</div>
+                    <div class="panel-heading">Editar gabinete</div>
 
                     <div class="panel-body">
                         @include('flash::message')
 
-                        {!! Form::open(['route' => 'gabinetes.store', 'class'=>'form-inline']) !!}
+                        {!! Form::model($gabinetes, [ 'route' => ['gabinetes.update',$gabinetes->id], 'method'=>'PUT']) !!}
                         <div class="form-group">
-                        {!! Form::label('especificaciones', 'Especificaciones del gabinete') !!}
-                        {!! Form::text('especificaciones',null,['class'=>'form-control', 'required', 'autofocus']) !!}
+                            {!! Form::label('especificaciones', 'gabinetes') !!}
+                            {!! Form::text('especificaciones',$gabinetes->especificaciones,['class'=>'form-control', 'required', 'autofocus']) !!}
                         </div>
 
-                        {!! Form::submit('Guardar',['class'=>'btn-primary btn']) !!}
-
+                        {!! Form::submit('Actualizar',['class'=>'btn-primary btn']) !!}
                         {!! Form::close() !!}
                     </div>
                 </div>
