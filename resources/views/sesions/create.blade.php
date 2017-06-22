@@ -10,7 +10,7 @@
                     <div class="panel-body">
                         @include('flash::message')
 
-                        {!! Form::open(['route' => 'sesions.store']) !!}
+                        {!! Form::open(['route' => 'sesions.store', 'method' => 'post']) !!}
 
                         <div class="form-group">
                             {!! Form::label('fecha', 'Fecha de la sesion') !!}

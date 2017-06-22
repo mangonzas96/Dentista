@@ -237,16 +237,16 @@
         },
         {
             "name": "laracasts/flash",
-            "version": "3.0.0",
+            "version": "3.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laracasts/flash.git",
-                "reference": "1c7658652e10791d934a37bc0f6f0bd5ce5ac73f"
+                "reference": "ad427aabf78d85a54f33ae72b969abf46b110b65"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laracasts/flash/zipball/1c7658652e10791d934a37bc0f6f0bd5ce5ac73f",
-                "reference": "1c7658652e10791d934a37bc0f6f0bd5ce5ac73f",
+                "url": "https://api.github.com/repos/laracasts/flash/zipball/ad427aabf78d85a54f33ae72b969abf46b110b65",
+                "reference": "ad427aabf78d85a54f33ae72b969abf46b110b65",
                 "shasum": ""
             },
             "require": {
@@ -258,6 +258,16 @@
                 "phpunit/phpunit": "^6.1"
             },
             "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Laracasts\\Flash\\FlashServiceProvider"
+                    ],
+                    "aliases": {
+                        "Flash": "Laracasts\\Flash\\Flash"
+                    }
+                }
+            },
             "autoload": {
                 "psr-0": {
                     "Laracasts\\Flash": "src/"
@@ -277,7 +287,7 @@
                 }
             ],
             "description": "Easy flash notifications",
-            "time": "2017-04-26T16:55:22+00:00"
+            "time": "2017-06-20T14:04:14+00:00"
         },
         {
             "name": "laravel/framework",

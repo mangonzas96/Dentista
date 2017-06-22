@@ -12,7 +12,7 @@
 
                         {!! Form::model($gabinete, [ 'route' => ['gabinetes.update', $gabinete->id], 'method'=>'PUT']) !!}
                         <div class="form-group">
-                            {!! Form::label('especificaciones', 'gabinetes') !!}
+                            {!! Form::label('especificaciones', 'Especificaciones del gabinete') !!}
                             {!! Form::text('especificaciones', $gabinete->especificaciones, ['class'=>'form-control', 'required', 'autofocus']) !!}
                         </div>
 

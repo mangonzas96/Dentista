@@ -18,9 +18,9 @@ class GabineteController extends Controller
      */
     public function index()
     {
-        $gabinetes = Gabinete::all();
+        $gabinete = Gabinete::all();
 
-        return view('gabinetes/index',['gabinetes'=>$gabinetes]);
+        return view('gabinetes/index',['gabinetes'=>$gabinete]);
     }
 
     /**
@@ -46,8 +46,8 @@ class GabineteController extends Controller
         ]);
 
         //
-        $gabinetes = new Gabinete($request->all());
-        $gabinetes->save();
+        $gabinete = new Gabinete($request->all());
+        $gabinete->save();
 
         // return redirect('especialidades');
 

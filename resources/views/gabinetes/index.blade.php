@@ -9,13 +9,6 @@
 
                     <div class="panel-body">
                         @include('flash::message')
-                        {!! Form::open(['route' => 'gabinetes.create', 'method' => 'get']) !!}
-                        {!!   Form::submit('Crear gabinete', ['class'=> 'btn btn-primary'])!!}
-                        {!! Form::close() !!}
-
-                        {!! Form::open(['route' => 'gabinetes.destroyAll', 'method' => 'delete']) !!}
-                        {!!   Form::submit('Borrar todos los gabinetes', ['class'=> 'btn btn-danger','onclick' => 'if(!confirm("¿Está seguro?"))event.preventDefault();'])!!}
-                        {!! Form::close() !!}
 
                         <br><br>
                         <table class="table table-striped table-bordered">
@@ -32,12 +25,7 @@
                                     {!! Form::close() !!}
 
                                 </td>
-                                <td>
-                                    {!! Form::open(['route' => ['gabinetes.destroy',$gabinete->id], 'method' => 'delete']) !!}
-                                    {!!   Form::submit('Borrar', ['class'=> 'btn btn-danger' ,'onclick' => 'if(!confirm("¿Está seguro?"))event.preventDefault();'])!!}
-                                    {!! Form::close() !!}
 
-                                </td>
                             </tr>
                             @endforeach
                         </table>
