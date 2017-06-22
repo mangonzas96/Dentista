@@ -122,19 +122,6 @@
                             </div>
                         </div>
 
-                        <div class="form-group{{ $errors->has('id_aseguradora') ? ' has-error' : '' }}">
-                            <label for="id_aseguradora" class="col-md-4 control-label">Aseguradora</label>
-
-                            <div class="col-md-6">
-                                <input id="id_aseguradora" type="text" class="form-control" name="id_aseguradora" value="{{ old('id_aseguradora') }}" required autofocus>
-
-                                @if ($errors->has('id_aseguradora'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('id_aseguradora') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
 
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                             <label for="password" class="col-md-4 control-label">Contraseña</label>

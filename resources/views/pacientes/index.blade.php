@@ -22,7 +22,6 @@
                                 <th>Telefono</th>
                                 <th>Email</th>
                                 <th>Dirección</th>
-                                <th>Aseguradora</th>
                                 <th colspan="2">Acciones</th>
 
 
@@ -40,7 +39,6 @@
                                     <td>{{ $paciente->telefono }}</td>
                                     <td>{{ $paciente->email }}</td>
                                     <td>{{ $paciente->direccion }}</td>
-                                    <td>{{ $paciente->aseguradora->name }}</td>
 
                                     <td>
                                         {!! Form::open(['route' => ['pacientes.edit',$paciente->id], 'method' => 'get']) !!}

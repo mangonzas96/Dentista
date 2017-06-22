@@ -59,13 +59,16 @@ class TratamientoController extends Controller
 
         ]);
 
-        $tratamiento = new Tratamiento($request->all());
-        $tratamiento->save();
+        $tratamientos = new Tratamiento($request->all());
+        $tratamientos->save();
 
 
         flash('Tratamiento creado correctamente');
 
         return redirect()->route('tratamientos.index');
+
+
+        //
     }
 
     /**

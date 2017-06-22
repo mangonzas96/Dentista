@@ -19,8 +19,6 @@ class CreatePacientesTable extends Migration
             $table->date('fechanacimiento');
             $table->unsignedInteger('user_id')->unique();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->unsignedInteger('aseguradora_id')->nullable();
-            $table->foreign('aseguradora_id')->references('id')->on('aseguradoras');
             $table->timestamps();
         });
     }

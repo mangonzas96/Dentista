@@ -9,9 +9,6 @@
 
                     <div class="panel-body">
                         @include('flash::message')
-                        {!! Form::open(['route' => 'odontologos.create', 'method' => 'get']) !!}
-                        {!!   Form::submit('Crear odontologo', ['class'=> 'btn btn-primary'])!!}
-                        {!! Form::close() !!}
 
                         <br><br>
                         <table class="table table-striped table-bordered">

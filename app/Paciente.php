@@ -7,15 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class Paciente extends Model
 {
     //
-    protected $fillable = ['user_id','dni','fechanacimiento','aseguradora_id'];
+    protected $fillable = ['user_id','dni','fechanacimiento'];
 
     public function user(){
         return $this->belongsTo('App\User');
-    }
-
-    public function aseguradora()
-    {
-        return $this->hasOne('App\Aseguradora');
     }
 
     public function sesion()

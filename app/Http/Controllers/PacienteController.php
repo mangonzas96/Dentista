@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Paciente;
 use App\User;
-use App\Aseguradora;
 use Illuminate\Http\Request;
 
 class PacienteController extends Controller
@@ -30,8 +29,7 @@ class PacienteController extends Controller
     {
         //
 
-        $aseguradoras = Aseguradora::all()->pluck('name','id');
-        return view('pacientes/create',['aseguradoras'=>$aseguradoras]);
+        return view('pacientes/create');
     }
 
     /**
@@ -51,7 +49,6 @@ class PacienteController extends Controller
             'direccion' => 'max:255',
             'dni' => 'required|max:9',
             'fechanacimiento' => 'required|date|before:now',
-            'aseguradora_id' => 'required|exists:aseguradoras,id',
         ]);
 
         $paciente = new Paciente($request->all());
@@ -85,8 +82,7 @@ class PacienteController extends Controller
     {
         //
         $paciente = Paciente::find($id);
-        $aseguradoras = Aseguradora::all()->pluck('name','id');
-        return view('pacientes/edit',['paciente'=> $paciente, 'aseguradoras'=>$aseguradoras]);
+        return view('pacientes/edit',['paciente'=> $paciente]);
     }
 
     /**
@@ -107,7 +103,6 @@ class PacienteController extends Controller
             'direccion' => 'max:255',
             'dni' => 'required|max:9',
             'fechanacimiento' => 'required|date|before:now',
-            'aseguradora_id' => 'required|exists:aseguradoras,id',
         ]);
 
         $paciente = Paciente::find($id);
