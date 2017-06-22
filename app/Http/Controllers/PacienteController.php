@@ -50,6 +50,7 @@ class PacienteController extends Controller
             'email' => 'required|max:255',
             'direccion' => 'max:255',
             'dni' => 'required|max:9',
+            'fechanacimiento' => 'required|date|before:now',
             'aseguradora_id' => 'required|exists:aseguradoras,id',
         ]);
 
@@ -105,6 +106,7 @@ class PacienteController extends Controller
             'email' => 'required|max:255',
             'direccion' => 'max:255',
             'dni' => 'required|max:9',
+            'fechanacimiento' => 'required|date|before:now',
             'aseguradora_id' => 'required|exists:aseguradoras,id',
         ]);
 
