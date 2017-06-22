@@ -82,9 +82,9 @@ class EspecialidadController extends Controller
     public function edit($id)
     {
 
-        $especialidad = Especialidad::find($id);
+        $especialidads = Especialidad::find($id);
 
-        return view('especialidads/edit')->with('especialidad', $especialidad);
+        return view('especialidads/edit',['especialidads' => $especialidads]);
     }
 
     /**
@@ -94,6 +94,13 @@ class EspecialidadController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
+
+
+
+
+
+
+
     public function update(Request $request, $id)
     {
         $this->validate($request, [

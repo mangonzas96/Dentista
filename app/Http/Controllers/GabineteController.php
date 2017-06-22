@@ -61,6 +61,7 @@ class GabineteController extends Controller
      *
      * @param  \App\Gabinete  $gabinete
      * @return \Illuminate\Http\Response
+
      */
     public function show(Gabinete $gabinete)
     {
