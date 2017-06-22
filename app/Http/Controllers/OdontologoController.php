@@ -88,8 +88,8 @@ class OdontologoController extends Controller
     public function edit($id)
     {
         $odontologo = Odontologo::find($id);
-        $especialidades = Especialidad::all()->pluck('name','id');
-        return view('odontologos/edit',['odontologo'=> $odontologo, 'especialidades'=>$especialidades]);
+        $especialidads = Especialidad::all()->pluck('name','id');
+        return view('odontologos/edit',['odontologo'=> $odontologo, 'especialidads'=>$especialidads]);
         //
     }
 
