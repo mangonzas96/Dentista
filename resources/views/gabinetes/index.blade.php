@@ -9,12 +9,12 @@
 
                     <div class="panel-body">
                         @include('flash::message')
-                        {!! Form::open(['route' => 'gabinetes.create', 'method' => 'get', 'class'=>'inline-important']) !!}
+                        {!! Form::open(['route' => 'gabinetes.create', 'method' => 'get']) !!}
                         {!!   Form::submit('Crear gabinete', ['class'=> 'btn btn-primary'])!!}
                         {!! Form::close() !!}
 
-                        {!! Form::open(['route' => 'gabinetes.destroyAll', 'method' => 'delete', 'class'=>'inline-important']) !!}
-                        {!!   Form::submit('Borrar todas', ['class'=> 'btn btn-danger','onclick' => 'if(!confirm("¿Está seguro?"))event.preventDefault();'])!!}
+                        {!! Form::open(['route' => 'gabinetes.destroyAll', 'method' => 'delete']) !!}
+                        {!!   Form::submit('Borrar todos los gabinetes', ['class'=> 'btn btn-danger','onclick' => 'if(!confirm("¿Está seguro?"))event.preventDefault();'])!!}
                         {!! Form::close() !!}
 
                         <br><br>
